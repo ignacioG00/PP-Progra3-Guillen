@@ -9,7 +9,7 @@ body {
   padding: 0;
   color: #333;
   background-image: url("verduleria2.gif");
-  background-size:contain;          
+  background-size: cover;          
   background-position: center;     
   background-repeat: no-repeat;  
 }
