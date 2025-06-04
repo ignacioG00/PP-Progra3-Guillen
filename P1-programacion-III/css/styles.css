@@ -7,8 +7,11 @@ body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f2f5;
   color: #333;
+  background-image: url("verduleria2.gif");
+  background-size:contain;          
+  background-position: center;     
+  background-repeat: no-repeat;  
 }
 
 h2 {
@@ -50,7 +53,6 @@ header a {
 /* Sección productos */
 .seccion-productos {
   padding: 20px;
-  background-color: #fff7ed;
 }
 
 .botones-orden {
@@ -182,7 +184,7 @@ header a {
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.85rem;
-  transition: background-color 0.2s;
+  transition: background-color 0.5s;
 }
 
 .boton-eliminar:hover {
