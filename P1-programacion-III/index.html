@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruteria</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="./img/frutas.ico">
+
+    <script defer src="js/main.js"></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav id="menu-nav">
+            <a href="index.html">
+                <div class="logo">
+                    
+                    <span>Frutería</span>
+                    
+                </div>
+                <div class="nombre"></div>
+                <div class="apellido"></div>
+
+            </a>
+        </nav>
+        
+        
+        
+        <div class="nombreAlumno"></div>
+        
+        <input type="text" placeholder="Buscar..." class="barra-busqueda" id="barra-busqueda">
+        
+        
+    </header>
+
+    
+    <!-- Contenedor principal -->
+    <main>
+    <section class="seccion-productos">
+        <h2>Nuestras frutas</h2>
+            <div class="botones-orden">
+                <button id="ordenar-nombre">Ordenar por nombre</button>
+                <button id="ordenar-precio">Ordenar por precio</button>
+            </div>
+        <div class="contenedor-productos" id="listado-frutas"></div>
+    </section>
+
+
+    <!-- Seccion carrito -->
+    <section class="seccion-carrito">
+        <h2>Carrito</h2>
+        <div class="carrito">
+            <span>Carrito: <span id="contador-carrito">0</span> productos</span>
+                <div class="carrito-scroll">
+                    <ul id="carrito-lista"></ul>
+                </div>
+        </div>
+        <div id="items-carrito">
+            <p>No hay elementos en el carrito.</p>
+        </div>
+
+        <div class="total-carrito">
+            <p>Total: <span id="precio-total">$0.00</span></p>
+            <button id="vaciar-carrito">Vaciar carrito</button>
+        </div>
+    </section>
+
+    </main>
+</body>
+</html>
