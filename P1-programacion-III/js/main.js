@@ -102,24 +102,35 @@ function filtrarProductos() {
     mostrarProductos(productosFiltrados); // renderiza productos filtrados
 }
 // --------------------- ORDENAMIENTO ---------------------
+
+let ordenNombreAscendente = true;
+let ordenPrecioAscendente = true;
+
 //Ordena el array de frutas por nombre (alfabético ascendente)
-function ordenarPorNombre() {
-  const copia = [...frutas];
-  copia.sort((a, b) =>
-    a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" })
-  );
-  renderizarProductos(copia);
-  agregarEventosBotonesAgregar();
+function ordenarCarritoPorNombre() {
+    carrito.sort((a, b) => {
+        return ordenNombreAscendente
+            ? a.nombre.localeCompare(b.nombre, "es", { sensitivity: "base" })
+            : b.nombre.localeCompare(a.nombre, "es", { sensitivity: "base" });
+    });
+
+    ordenNombreAscendente = !ordenNombreAscendente; // alternar orden
+    guardarCarritoEnLocalStorage();
+    mostrarCarrito();
 }
 
 // Ordena el array de frutas por precio (menor → mayor)
-function ordenarPorPrecio() {
-  const copia = [...frutas];
-  copia.sort((a, b) => a.precio - b.precio);
-  renderizarProductos(copia);
-  agregarEventosBotonesAgregar();
-}
+function ordenarCarritoPorPrecio() {
+    carrito.sort((a, b) => {
+        return ordenPrecioAscendente
+            ? a.precio - b.precio
+            : b.precio - a.precio;
+    });
 
+    ordenPrecioAscendente = !ordenPrecioAscendente; // alternar orden
+    guardarCarritoEnLocalStorage();
+    mostrarCarrito();
+}
 
 
 // --------------------- ALUMNO ---------------------
@@ -186,10 +197,9 @@ function init() {
     // Asigno el evento al input para filtrar frutas
     document.getElementById("barra-busqueda").addEventListener("input", filtrarProductos);
 
+    document.getElementById("ordenar-nombre").addEventListener("click", ordenarCarritoPorNombre);
+    document.getElementById("ordenar-precio").addEventListener("click", ordenarCarritoPorPrecio);
 
-    document.getElementById("ordenar-nombre").addEventListener("click", ordenarPorNombre);
-    document.getElementById("ordenar-precio").addEventListener("click", ordenarPorPrecio);
-    
     document.getElementById("vaciar-carrito").addEventListener("click", vaciarCarrito);
 
     // Mostrar el carrito ya cargado si hay datos previos
